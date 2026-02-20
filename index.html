@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JNTUK Examination Information Center</title>
+  <form id="searchForm">
+  <input type="search" id="searchInput" minlength="10" required placeholder="Enter at least 10 chars">
+  <button type="submit" id="searchButton">Search</button>
+  <span id="errorMsg" style="color:red; display:none;">Please enter at least 10 characters.</span>
+</form>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const searchForm = document.getElementById('searchForm');
+  const errorMsg = document.getElementById('errorMsg');
+
+  searchForm.addEventListener('submit', function(event) {
+    if (searchInput.value.length < 10) {
+      event.preventDefault(); // Prevents form submission
+      errorMsg.style.display = 'block';
+    } else {
+      errorMsg.style.display = 'none';
+      // Proceed with search
+    }
+  });
+</script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #99ccff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: rgb(35, 39, 240);
+      font-family: serif;
+    }
+    header h2 {
+      margin: 5px 0;
+      font-size: 18px;
+      font-weight: normal;
+      color: rgb(233, 0, 97);
+    }
+    .jntuk {
+      color: black;
+      margin-top: 10px;
+      display: block;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #444;
+
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      box-sizing: border-box; 
+    }
+    .captcha {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .captcha input {
+      margin-right: 10px;
+    }
+    button {
+      background-color: hsl(210, 100%, 50%);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 70%;
+      height: 50%;
+      margin-left: 80px;
+    }
+    button:hover {
+      background-color: #003366;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #777;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="https://www.destinationwebsite.com"></a>
+    <img src="Jntuk-logo.png" alt="JNTUK Logo" style="height: 80px; margin-right: 20px;">
+    <h1>Jawaharlal Nehru Technological University Kakinada</h1>
+    <h2>జవహర్‌లాల్ నెహ్రూ సాంకేతిక విశ్వవిద్యాలయం కాకినాడ</h2>
+    <p>Kakinada, Andhra Pradesh, India Pin: 533461</p>
+    <strong class="jntuk">JNTUK Examination Information Center</strong>
+  </header>
+
+  <div class="container">
+    <div class="title">
+      B.Tech I Year I Semester (R23) Regular & Supplementary Examinations, January 2026
+    </div>
+
+    <!-- The 'action' now specifically points to meme.png -->
+    <form action="jntuk.jpg" method="get">
+      <label for="hallticket">Enter Hallticket Number:</label>
+      <input type="text" id="hallticket" name="hallticket" placeholder="Hallticket Number" required>
+
+      <div class="captcha">
+        <input type="checkbox" id="human" required>
+        <label="human" class="i'm">I am not a robot</label>
+      </div>
+     
+      <button type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2026 JNTUK Examination Information Center
+  </footer>
+
+</body>
+</html>
