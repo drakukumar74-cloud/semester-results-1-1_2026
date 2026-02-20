@@ -4,28 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JNTUK Examination Information Center</title>
-  <form id="searchForm">
-  <input type="search" id="searchInput" minlength="10" required placeholder="Enter at least 10 chars">
-  <button type="submit" id="searchButton">Search</button>
-  <span id="errorMsg" style="color:red; display:none;">Please enter at least 10 characters.</span>
-</form>
-
-<script>
-  const searchInput = document.getElementById('searchInput');
-  const searchForm = document.getElementById('searchForm');
-  const errorMsg = document.getElementById('errorMsg');
-
-  searchForm.addEventListener('submit', function(event) {
-    if (searchInput.value.length < 10) {
-      event.preventDefault(); // Prevents form submission
-      errorMsg.style.display = 'block';
-    } else {
-      errorMsg.style.display = 'none';
-      // Proceed with search
-    }
-  });
-</script>
-
+ 
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -50,6 +29,13 @@
       font-size: 18px;
       font-weight: normal;
       color: rgb(233, 0, 97);
+    }
+    .logo-img {
+      height: 80px;
+      margin-bottom: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .jntuk {
       color: black;
@@ -76,7 +62,6 @@
       margin-bottom: 8px;
       font-weight: bold;
       color: #444;
-
     }
     input[type="text"] {
       width: 100%;
@@ -94,6 +79,7 @@
     }
     .captcha input {
       margin-right: 10px;
+      width: auto;
     }
     button {
       background-color: hsl(210, 100%, 50%);
@@ -103,9 +89,10 @@
       font-size: 16px;
       border-radius: 4px;
       cursor: pointer;
-      width: 70%;
-      height: 50%;
-      margin-left: 80px;
+      width: 100%; /* Changed to 100% for better mobile centering */
+      max-width: 300px;
+      display: block;
+      margin: 0 auto;
     }
     button:hover {
       background-color: #003366;
@@ -122,8 +109,8 @@
 <body>
 
   <header>
-    <a href="https://www.destinationwebsite.com"></a>
-    <img src="Jntuk-logo.png" alt="JNTUK Logo" style="height: 80px; margin-right: 20px;">
+    <!-- Ensure the file is named exactly Jntuk-logo.png in your folder -->
+    <img src="Jntuk-logo.png" alt="JNTUK Logo" class="logo-img">
     <h1>Jawaharlal Nehru Technological University Kakinada</h1>
     <h2>జవహర్‌లాల్ నెహ్రూ సాంకేతిక విశ్వవిద్యాలయం కాకినాడ</h2>
     <p>Kakinada, Andhra Pradesh, India Pin: 533461</p>
@@ -135,19 +122,16 @@
       B.Tech I Year I Semester (R23) Regular & Supplementary Examinations, January 2026
     </div>
 
-    <!-- The 'action' now specifically points to meme.png -->
     <form action="jntuk.jpg" method="get">
       <label for="hallticket">Enter Hallticket Number:</label>
       <input type="text" id="hallticket" name="hallticket" placeholder="Hallticket Number" required>
 
       <div class="captcha">
         <input type="checkbox" id="human" required>
-        <label="human" class="i'm">I am not a robot</label>
+        <label for="human">I am not a robot</label>
       </div>
      
-      <button type="submit">
-        Search
-      </button>
+      <button type="submit">Search</button>
     </form>
   </div>
 
